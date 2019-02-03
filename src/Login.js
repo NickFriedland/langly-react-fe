@@ -5,6 +5,19 @@ import React, { Component } from 'react';
 class Login extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      username: '',
+      password: ''
+    }
+  }
+
+  async handleSubmit(evt) {
+    evt.preventDefault();
+    if (this.state.username) {
+      await this.register();
+    } else {
+      await this.login();
+    }
   }
 
   handleChange(evt) {
@@ -15,7 +28,9 @@ class Login extends Component {
   }
 
   render() {
-    return <div className='Login' />;
+    return <div className='Login'>
+      <h1>This is the login page</h1>
+    </div>;
   }
 
   state = {};

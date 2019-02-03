@@ -3,26 +3,13 @@ import React, { Component } from 'react';
 // import styled from 'styled-components';
 
 class NotFound extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  handleChange(evt) {
-     // runs on every keystroke
-    this.setState({
-      fullName: evt.target.value
-    });
-  }
-
   render() {
-    return <div className='NotFound' />;
+    return (
+      <div className="NotFound">
+        <h1>Hello From NotFound</h1>
+      </div>
+    );
   }
-
-  state = {};
 }
-
-NotFound.propTypes = {};
-
-NotFound.defaultProps = {};
 
 export default NotFound;
