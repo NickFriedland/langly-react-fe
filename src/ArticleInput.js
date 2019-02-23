@@ -9,13 +9,12 @@ class ArticleInput extends Component {
     this.state = {
       url: ''
     }
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(evt) {
+  handleChange = (evt) => {
      // runs on every keystroke
-    this.setState({
-      [evt.target.name]: evt.target.value
-    });
+    this.setState({url: evt.target.value});
   }
 
   async handleSubmit(evt) {
@@ -23,9 +22,6 @@ class ArticleInput extends Component {
 
     let res = await axios.post('http://localhost:3001/', this.state.url);
     return res;
-    // console.log('HERE');
-
-    // Mercury.parse(this.state.url).then(result => console.log(result));
   }
 
   render() {
@@ -34,10 +30,9 @@ class ArticleInput extends Component {
       <form onSubmit={this.handleSubmit}>
           <label>URL</label>
           <input
-            name="url"
             type="text"
-            onChange={this.handleChange}
             value={this.state.url}
+            onChange={this.handleChange}
           />
         <button type="submit">
           Submit
