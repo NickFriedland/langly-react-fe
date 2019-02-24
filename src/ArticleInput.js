@@ -11,6 +11,9 @@ class ArticleInput extends Component {
     super(props);
     this.state = {
       url: '',
+      title: '',
+      content: '',
+      readability:'',
       isSubmitted: false
     }
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,10 +26,10 @@ class ArticleInput extends Component {
 
   async handleSubmit(evt) {
     evt.preventDefault();
-    console.log('URL in Article State', this.state.url)
+    // console.log('URL in Article State', this.state.url)
 
     // Make post request to express and store the response 
-    //let res = await axios.post('http://localhost:3001/', this.state.url);
+    let res = await axios.post('http://localhost:3001/', {url: this.state.url});
     
     // Mock response will change to res when we figure out the CORs problems.
     const mockResponse = {
@@ -53,9 +56,9 @@ class ArticleInput extends Component {
     // Also change the value of isSubmitted to render ReadingLevel
 
     this.setState({
-      content: mockResponse.content,
-      title: mockResponse.title,
-      readability: mockResponse.readability,
+      content: res.content,
+      title: res.title,
+      readability: res.readability,
       isSubmitted: true
     });
   }
