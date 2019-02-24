@@ -24,6 +24,10 @@ class ArticleInput extends Component {
   async handleSubmit(evt) {
     evt.preventDefault();
 
+    // Make post request to express and store the response 
+    //let res = await axios.post('http://localhost:3001/', this.state.url);
+    
+    // Mock response will change to res when we figure out the CORs problems.
     const mockResponse = {
       author: "Jeremy Mack",
       content: "Those guys are inside you building a piece of shit Ethan! They're inside you building a monument to compromise! Fuck them, fuck those people, fuck this whole thing Ethan. Get off the high road Summer. We all got pink eye because you wouldn't stop texting on the toilet. Rick, is this a Saw thing? Are you seriously Sawing the Vindicators? I love morty and i hope morty loves me. I want to wrap my arms around him and feel him deep inside me. Wow, so your origin is what? You fell into a vat of redundancy? Come on, flip the pickle, Morty. You're not gonna regret it. The payoff is huge. We're gonna nine eleven this bitch unless Morty gets better math grades! It's a figure of speech, Morty! They're bureaucrats! I don't respect them. Just keep shooting, Morty! You have no idea what prison is like here! Then it's time to get your beak wet tonight playa! Your failures are your own, old man! I say, follow throooough! Listen, Morty, I hate to break it to you but what people call love is just a chemical reaction that compels animals to breed. Don't Morty me! I tricked Rick into taking Dad on an adventure because I thought I could get a break from this kind of shit! But no! Like father, like goddamn daughter! You wanna be like Rick?! Congratulations! You're just as arrogant and just as irresponsible! Want to piss on him? Nobody's killing me until after I catch my wife with another man. Ohh, fuck! Your blood will be my lotion! You gotta shove these seeds way up your butt Morty, waay up there. Thanks Noob Noob, this guy gets it. 'And'? What more do you want tacked on to this? I turned myself into a pickle, and 9/11 was an inside job?' Yea and I made the stars that became the carbon in your mothers ovaries! ",
@@ -44,18 +48,15 @@ class ArticleInput extends Component {
     }
 
 
+    // Store the content, title and readability score to pass into ReadingLevel
+    // Also change the value of isSubmitted to render ReadingLevel
+
     this.setState({
       content: mockResponse.content,
       title: mockResponse.title,
       readability: mockResponse.readability,
       isSubmitted: true
     });
-
-    console.log(this.state.content);
-    console.log(this.state.title);
-
-    //let res = await axios.post('http://localhost:3001/', this.state.url);
-    //return res;
   }
 
   render() {

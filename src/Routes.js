@@ -7,6 +7,7 @@ import Login from './Login.js';
 import ReadingLevel from './ReadingLevel.js';
 import ArticleInput from './ArticleInput.js';
 import TextResult from './TextResult.js';
+import NavBar from './NavBar.js';
 
 
 class Routes extends Component {
@@ -14,6 +15,7 @@ class Routes extends Component {
       // console.log('ROUTE PROPS', this.props);
       return (
         <div className="Routes">
+          <NavBar />
           <Switch>
             <Route
               exact

@@ -4,7 +4,9 @@ import React, { Component } from 'react';
 
 class NavBar extends Component {
   render() {
-    return <div className='NavBar' />;
+    return <div className='NavBar'>
+    	LANGLY
+    </div>;
   }
 
   state = {};
