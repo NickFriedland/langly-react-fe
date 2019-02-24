@@ -19,8 +19,9 @@ class ArticleInput extends Component {
 
   async handleSubmit(evt) {
     evt.preventDefault();
+    console.log('URL in Article State', this.state.url)
 
-    let res = await axios.post('http://localhost:3001/', this.state.url);
+    let res = await axios.post('http://localhost:3001/', {url: this.state.url});
     return res;
   }
 
