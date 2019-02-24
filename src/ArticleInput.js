@@ -23,6 +23,7 @@ class ArticleInput extends Component {
 
   async handleSubmit(evt) {
     evt.preventDefault();
+    console.log('URL in Article State', this.state.url)
 
     // Make post request to express and store the response 
     //let res = await axios.post('http://localhost:3001/', this.state.url);
