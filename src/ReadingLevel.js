@@ -6,11 +6,11 @@ class ReadingLevel extends Component {
   
   constructor(props) {
     super(props);
-
-    this.state = {title: this.props.title,
-                  content: this.props.content,
-                  readability: this.props.readability
-                 };
+    this.state = {
+      title: this.props.title,
+      content: this.props.content,
+      readability: this.props.readability
+    };
   }
 
   
@@ -18,7 +18,7 @@ class ReadingLevel extends Component {
   render() {
     return <div className='ReadingLevel'> 
       <h1>{this.state.title}</h1>
-      <p>{this.state.readability}</p>
+      <h2>{this.state.readability}</h2>
       <p>{this.state.content}</p>
     </div>;
   }
