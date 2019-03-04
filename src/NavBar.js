@@ -1,13 +1,36 @@
 import React, { Component } from 'react';
-//import './NavBar.css';
-// import styled from 'styled-components';
+import { Navbar, NavbarToggler, NavbarBrand, Collapse, Nav, NavItem, NavLink } from 'reactstrap';
+
 
 class NavBar extends Component {
-  render() {
-    return <div className='NavBar'>
-    	LANGLY
-    </div>;
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      readability: true
+    };
   }
+
+  render() {
+    return (
+      <div>
+        <Navbar color="light" light>
+          <NavbarBrand href="/">LANGLY</NavbarBrand>
+            <Nav navbar>
+              { this.state.readability ? (
+                <NavItem>
+                  Readability: C2
+                </NavItem>
+              ) : (
+                <NavItem>
+
+                </NavItem>
+              ) }
+            </Nav>
+        </Navbar>
+      </div>
+  );
+}
 
   state = {};
 }

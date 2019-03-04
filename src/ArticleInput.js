@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Container, Row, Col } from 'reactstrap';
 
 import ReadingLevel from './ReadingLevel';
 
@@ -45,18 +46,23 @@ class ArticleInput extends Component {
           </React.Fragment>
         ) : (
           <React.Fragment>
-            <h1>HOMEPAGE FOR LANGLY</h1>
-            <form onSubmit={this.handleSubmit}>
-              <label>URL</label>
-              <input
-                type="text"
-                value={this.state.url}
-                onChange={this.handleChange}
-              />
-              <button type="submit">
-                Submit
-              </button>
-            </form>
+            <Container>
+              <Row>
+                <Col sm="12" md={{ size: 6, offset: 3 }}>
+                  <form onSubmit={this.handleSubmit}>
+                    <label>URL</label>
+                    <input
+                      type="text"
+                      value={this.state.url}
+                      onChange={this.handleChange}
+                    />
+                    <button type="submit">
+                    Submit
+                    </button>
+                  </form>
+                </Col>
+             </Row>
+            </Container>
           </React.Fragment>
         )}
       
