@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import WordsList from './WordsList';
 //import './ReadingLevel.css';
 // import styled from 'styled-components';
 
@@ -7,19 +8,28 @@ class ReadingLevel extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: this.props.title,
-      content: this.props.content,
-      readability: this.props.readability
+      words: []
     };
   }
 
-  
+  handleDoubleClick = (evt) => {
+    console.log('EVT', evt.target);
+    // this.setState({
+    //   words: [...this.state.words, evt.target]
+    // });
+  }
 
   render() {
+    let spanifiedContent = this.props.content.split(' ').map(word => <span>{`&nbsp;${word};&nbsp`}</span>).join();
+    console.log('SPAN', spanifiedContent)
+
     return <div className='ReadingLevel'> 
-      <h1>{this.state.title}</h1>
-      <h2>{this.state.readability}</h2>
-      <p>{this.state.content}</p>
+      <h1 onDoubleClick={this.handleDoubleClick}>{this.props.title}</h1>
+      <h2>{this.props.readability}</h2>
+      <p onDoubleClick={this.handleDoubleClick}>{spanifiedContent}</p>
+      {this.state.words.length ?
+        <WordsList words={this.state.words} /> : ''
+      }
     </div>;
   }
 
