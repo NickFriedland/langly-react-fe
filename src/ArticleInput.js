@@ -24,13 +24,14 @@ class ArticleInput extends Component {
 
   async handleSubmit(evt) {
     evt.preventDefault();
-
+    
     let res = await axios.post('http://localhost:3001/', {url: this.state.url});
+    let {content, title, readability} = res.data;
     
     this.setState({
-      content: res.data.content,
-      title: res.data.title,
-      readability: res.data.readability,
+      content,
+      title,
+      readability,
       isSubmitted: true
     });
   }

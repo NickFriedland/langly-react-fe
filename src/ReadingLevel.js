@@ -12,24 +12,21 @@ class ReadingLevel extends Component {
     };
   }
 
-  handleDoubleClick = (evt) => {
-    console.log('EVT', evt.target);
-    // this.setState({
-    //   words: [...this.state.words, evt.target]
-    // });
-  }
+  // handleDoubleClick = (evt) => {
+  //   console.log('EVT', evt.target);
+  //   // this.setState({
+  //   //   words: [...this.state.words, evt.target]
+  //   // });
+  // }
 
   render() {
-    let spanifiedContent = this.props.content.split(' ').map(word => <span>{`&nbsp;${word};&nbsp`}</span>).join();
-    console.log('SPAN', spanifiedContent)
-
     return <div className='ReadingLevel'> 
-      <h1 onDoubleClick={this.handleDoubleClick}>{this.props.title}</h1>
+      <h1>{this.props.title}</h1>
       <h2>{this.props.readability}</h2>
-      <p onDoubleClick={this.handleDoubleClick}>{spanifiedContent}</p>
-      {this.state.words.length ?
+      <p> {this.props.content} </p>
+      {/* {this.state.words.length ?
         <WordsList words={this.state.words} /> : ''
-      }
+      } */}
     </div>;
   }
 
