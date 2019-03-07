@@ -12,7 +12,6 @@ class ArticleInput extends Component {
       title: '',
       text: '',
       readability:'',
-      html: '',
       isSubmitted: false
     }
     this.handleSubmit = this.handleSubmit.bind(this);
