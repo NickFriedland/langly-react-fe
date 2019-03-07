@@ -10,8 +10,9 @@ class ArticleInput extends Component {
     this.state = {
       url: '',
       title: '',
-      content: '',
+      text: '',
       readability:'',
+      html: '',
       isSubmitted: false
     }
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,10 +27,10 @@ class ArticleInput extends Component {
     evt.preventDefault();
     
     let res = await axios.post('http://localhost:3001/', {url: this.state.url});
-    let {content, title, readability} = res.data;
+    let { text, title, readability } = res.data;
     
     this.setState({
-      content,
+      text,
       title,
       readability,
       isSubmitted: true
@@ -43,7 +44,7 @@ class ArticleInput extends Component {
     return <div className='ArticleInput'>
       { isSubmitted ? (
           <React.Fragment>
-            <ReadingLevel title={this.state.title} content={this.state.content} readability={this.state.readability}/>
+            <ReadingLevel title={this.state.title} text={this.state.text} readability={this.state.readability}/>
           </React.Fragment>
         ) : (
           <React.Fragment>
