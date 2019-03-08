@@ -23,7 +23,7 @@ class ReadingLevel extends Component {
     return <div className='ReadingLevel'> 
       <h1>{this.props.title}</h1>
       <h2>{this.props.readability}</h2>
-      <p> {this.props.text} </p>
+      {this.props.text.split('\n').map(t => <p>{t}</p>)}
       {/* {this.state.words.length ?
         <WordsList words={this.state.words} /> : ''
       } */}
