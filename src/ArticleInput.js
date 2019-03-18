@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Container, Row, Col } from 'reactstrap';
 
 import ReadingLevel from './ReadingLevel';
+import './ArticleInput.css'
 
 class ArticleInput extends Component {
   constructor(props) {
@@ -35,7 +36,7 @@ class ArticleInput extends Component {
       isSubmitted: true
     });
   }
-
+//sm="12" md={{ size: 6, offset: 3 }}
   render() {
     const isSubmitted = this.state.isSubmitted;
     console.log('READABILITY', this.state.readability);
@@ -47,23 +48,25 @@ class ArticleInput extends Component {
           </React.Fragment>
         ) : (
           <React.Fragment>
-            <Container>
-              <Row>
-                <Col sm="12" md={{ size: 6, offset: 3 }}>
-                  <form onSubmit={this.handleSubmit}>
-                    <label>URL</label>
-                    <input
-                      type="text"
-                      value={this.state.url}
-                      onChange={this.handleChange}
-                    />
-                    <button type="submit">
-                    Submit
-                    </button>
-                  </form>
-                </Col>
-             </Row>
-            </Container>
+            <div className="flex-container">
+                <div className="row" >
+                  <div className="flex-item">
+                    <form onSubmit={this.handleSubmit}>
+                      <label className="item">URL</label>
+                      <input
+                        className="input"
+                        type="text"
+                        value={this.state.url}
+                        onChange={this.handleChange}
+                      />
+                      <button className="item" type="submit">
+                      Submit
+                      </button>
+                    </form>
+                  </div>
+                </div>
+             
+            </div>
           </React.Fragment>
         )}
       
