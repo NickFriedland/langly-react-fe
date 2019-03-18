@@ -5,10 +5,6 @@ import { Navbar, NavbarToggler, NavbarBrand, Collapse, Nav, NavItem, NavLink } f
 class NavBar extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      readability: true
-    };
   }
 
   render() {
@@ -17,9 +13,9 @@ class NavBar extends Component {
         <Navbar color="light" light>
           <NavbarBrand href="/">LANGLY</NavbarBrand>
             <Nav navbar>
-              { this.state.readability ? (
+              { this.props.readability ? (
                 <NavItem>
-                  Readability: C2
+                  Readability: {this.props.readability}
                 </NavItem>
               ) : (
                 <NavItem>

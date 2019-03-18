@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Container, Row, Col } from 'reactstrap';
 
 import ReadingLevel from './ReadingLevel';
 import './ArticleInput.css'
@@ -35,6 +34,8 @@ class ArticleInput extends Component {
       readability,
       isSubmitted: true
     });
+
+    this.props.setNavReadability(this.state.readability);
   }
 //sm="12" md={{ size: 6, offset: 3 }}
   render() {
