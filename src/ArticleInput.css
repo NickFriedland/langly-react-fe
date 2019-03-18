@@ -1,0 +1,39 @@
+.item{
+    padding: 15px;
+    margin: 15px;
+}
+
+.input{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.ArticleInput{
+    height: 100%;
+}
+
+.flex-container {
+    height: 30em;
+    padding: 0;
+    margin: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.row {
+    width: auto;
+}
+
+.flex-item {
+    padding: 5px;
+    margin: 10px;
+    line-height: 20px;
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center;
+}

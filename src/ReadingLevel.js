@@ -30,23 +30,31 @@ class ReadingLevel extends Component {
   }
 
   render() {
-    // let newLine = this.props.text.split('\n').map(t => <p>{t}</p>).toString();
-    return <div className='ReadingLevel'> 
-      <h1>{this.props.title}</h1>
-      <h2>{this.props.readability}</h2>
-      <Highlightable ranges={ranges}
-               enabled={true}
-               onTextHighlighted={onTextHighlightedCallback}
-               id={uniqueId}
-               onMouseOverHighlightedWord={onMouseOverHighlightedWordCallback}
-               highlightStyle={{
-                 backgroundColor: '#ffcc80'
-               }}
-               text={this.props.text}
-/>
-      {/* {this.state.words.length ?
-        <WordsList words={this.state.words} /> : ''
-      } */}
+    /* <Highlightable ranges={ranges}
+    enabled={true}
+    onTextHighlighted={onTextHighlightedCallback}
+    id={uniqueId}
+    onMouseOverHighlightedWord={onMouseOverHighlightedWordCallback}
+    highlightStyle={{
+      backgroundColor: '#ffcc80'
+    }}
+    text={this.props.text}
+    />
+    */
+   
+    return <div className='ReadingLevel'>
+      <div className='container'>
+        <div>
+          <h1>{this.props.title}</h1>
+          <h2>{this.props.readability}</h2>
+        </div>
+        <div>
+          {this.props.text.split('\n').map(t => <p>{t}</p>)}
+          {/* {this.state.words.length ?
+            <WordsList words={this.state.words} /> : ''
+          } */}
+        </div>
+      </div> 
     </div>;
   }
 

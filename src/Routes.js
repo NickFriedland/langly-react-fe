@@ -11,11 +11,27 @@ import NavBar from './NavBar.js';
 
 
 class Routes extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      readability: null // null if there is no score yet
+    };
+
+  }
+
+  setReadability = (score) => {
+    this.setState({
+      readability: score
+    }, () => {
+      console.log('readability:', this.state.readability);
+    });
+  }
+
   render() {
       // console.log('ROUTE PROPS', this.props);
       return (
         <div className="Routes">
-          <NavBar />
+          <NavBar readability={this.state.readability}/>
           <Switch>
             <Route
               exact
@@ -30,7 +46,7 @@ class Routes extends Component {
             <Route
               exact
               path="/"
-              render={() => <ArticleInput />}
+              render={() => <ArticleInput setNavReadability={ this.setReadability }/>}
             />
             <Route
               exact
