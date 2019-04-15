@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import WordsList from './WordsList';
-import Highlightable, {ranges, onTextHighlightedCallback, uniqueId, onMouseOverHighlightedWordCallback} from 'highlightable';
+// import WordsList from './WordsList';
+// import Highlightable, {ranges, onTextHighlightedCallback, uniqueId, onMouseOverHighlightedWordCallback} from 'highlightable';
 
 //import './ReadingLevel.css';
 // import styled from 'styled-components';
