@@ -25,7 +25,7 @@ class ArticleInput extends Component {
   async handleSubmit(evt) {
     evt.preventDefault();
     
-    let res = await axios.post('http://localhost:3001/', {url: this.state.url});
+    let res = await axios.post('https://langly-express-be.herokuapp.com/', {url: this.state.url});
     let { text, title, readability } = res.data;
     
     this.setState({
