@@ -25,18 +25,16 @@ class ReadingLevel extends Component {
           <h2>{this.props.readability}</h2>
         </div>
         <div>
-          {/* {this.props.text.split('\n').map(t => <p>{t}</p>)} */}
-          <Highlightable ranges={ranges}
-            enabled={true}
-            onTextHighlighted={onTextHighlightedCallback}
-            id={uniqueId}
-            onMouseOverHighlightedWord={onMouseOverHighlightedWordCallback}
-            highlightStyle={{
-              backgroundColor: '#ffcc80'
-            }}
-            text = {'some text here to test'}
-            // text = {this.props.text}
-          />
+          {this.props.text.split('\n').map(t => <p>{t}</p>)}
+          {/* <Highlightable 
+            ranges={[]} 
+            enabled={true} 
+            onTextHighlighted={(...args) => console.log("onTextHighlighted", args)} 
+            id="myid" 
+            onMouseOverHighlightedWord={(...args) => console.log("onMouseOverHighlightedWord", args)} 
+            highlightStyle={{}} 
+            text={'Some text'}
+          /> */}
           {/* {this.state.words.length ?
             <WordsList words={this.state.words} /> : ''
           } */}
