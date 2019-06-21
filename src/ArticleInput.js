@@ -25,7 +25,7 @@ class ArticleInput extends Component {
   async handleSubmit(evt) {
     evt.preventDefault();
     console.log('FE NODE_ENV: ', process.env.NODE_ENV);
-    // 1st attempt to dictate endpoint URL by NODE_ENV
+    // 2nd attempt to dictate endpoint URL by NODE_ENV
     const endpoint = process.env.NODE_ENV === 'development' ? 'http://localhost:3001/' : 'https://langly-express-be.herokuapp.com/';
     let res = await axios.post(endpoint, {url: this.state.url});
     let { text, title, readability } = res.data;
